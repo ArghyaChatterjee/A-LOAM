@@ -42,7 +42,7 @@ Download [NSH indoor outdoor](https://drive.google.com/file/d/1s05tBQOLNEDDurlg4
 
 
 ## 4. KITTI Example (Velodyne HDL-64)
-Download [KITTI Odometry dataset](http://www.cvlibs.net/datasets/kitti/eval_odometry.php) to YOUR_DATASET_FOLDER and set the `dataset_folder` to /home/arghya/KITTI/data/odometry/ (use your name instead of arghya) and `sequence_number` parameter to 00 (or anything else like 01/02/03...) in `kitti_helper.launch` file. Note you can also convert KITTI dataset to bag file if you set `to_bag` parameter to true inside `kitti_helper.launch`. 
+Download [KITTI Odometry dataset](http://www.cvlibs.net/datasets/kitti/eval_odometry.php) to YOUR_DATASET_FOLDER and set the `dataset_folder` to /home/arghya/KITTI/data/odometry/ (use your name instead of arghya) and `sequence_number` parameter to 00 (or anything else like 01, 02, 03, ...) in `kitti_helper.launch` file.  
 
 ```
     roslaunch aloam_velodyne aloam_velodyne_HDL_64.launch
@@ -51,7 +51,7 @@ Download [KITTI Odometry dataset](http://www.cvlibs.net/datasets/kitti/eval_odom
 The directory structure for providing data looks like the following:
 ```
 home
-    |-- arghya
+    |-- arghya (use your name instead of arghya)
         |-- KITTI
             |-- data
                 |-- odometry
@@ -77,6 +77,11 @@ home
                                     |-- 000001.bin
                                     |-- .......bin
  ```
+In order to convert the sequence as a bag file, set `to_bag` parameter to true and `output_bag_file` parameter to /home/arghya/KITTI/data/odometry/kitti.bag (use your name instead of arghya) inside `kitti_helper.launch`. Once the sequences are converted to bag file and saved under the name kitti.bag, you can later on play from that saved bag file. You need to do the following:
+```
+    roslaunch aloam_velodyne aloam_velodyne_HDL_64.launch
+    rosbag play /home/arghya/KITTI/data/odometry/kitti.bag
+```
               
 <img src="https://github.com/HKUST-Aerial-Robotics/A-LOAM/blob/devel/picture/kitti_gif.gif" width = 720 height = 351 />
 
