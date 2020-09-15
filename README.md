@@ -42,12 +42,42 @@ Download [NSH indoor outdoor](https://drive.google.com/file/d/1s05tBQOLNEDDurlg4
 
 
 ## 4. KITTI Example (Velodyne HDL-64)
-Download [KITTI Odometry dataset](http://www.cvlibs.net/datasets/kitti/eval_odometry.php) to YOUR_DATASET_FOLDER and set the `dataset_folder` and `sequence_number` parameters in `kitti_helper.launch` file. Note you also convert KITTI dataset to bag file for easy use by setting proper parameters in `kitti_helper.launch`. 
+Download [KITTI Odometry dataset](http://www.cvlibs.net/datasets/kitti/eval_odometry.php) to YOUR_DATASET_FOLDER and set the `dataset_folder` to /home/arghya/KITTI/data/odometry/ (use your name instead of arghya) and `sequence_number` parameter to 00 (or anything else like 01/02/03...) in `kitti_helper.launch` file. Note you can also convert KITTI dataset to bag file if you set `to_bag` parameter to true inside `kitti_helper.launch`. 
 
 ```
     roslaunch aloam_velodyne aloam_velodyne_HDL_64.launch
     roslaunch aloam_velodyne kitti_helper.launch
 ```
+The directory structure for providing data looks like the following:
+```
+home
+    |-- arghya
+        |-- KITTI
+            |-- data
+                |-- odometry
+                    |-- results
+                    |    |-- 00.txt (Ground Truth Poses file)
+                    |-- sequences
+                    |    |-- 00
+                    |        |-- image_0
+                    |        |   |-- 000000.png
+                    |        |   |-- 000001.png
+                    |        |   |-- .......png
+                    |        | image_1
+                    |        |   |-- 000000.png
+                    |        |   |-- 000001.png
+                    |        |   |-- .......png
+                    |        | calib.txt
+                    |        | times.txt
+                    |-- velodyne
+                        |-- sequences
+                            |-- 00
+                                |-- velodyne
+                                    |-- 000000.bin
+                                    |-- 000001.bin
+                                    |-- .......bin
+ ```
+              
 <img src="https://github.com/HKUST-Aerial-Robotics/A-LOAM/blob/devel/picture/kitti_gif.gif" width = 720 height = 351 />
 
 ## 5. Docker Support
