@@ -77,7 +77,12 @@ home
                                     |-- 000001.bin
                                     |-- .......bin
  ```
-In order to convert the sequence as a bag file, set `to_bag` parameter to true and `output_bag_file` parameter to /home/arghya/KITTI/data/odometry/kitti.bag (use your name instead of arghya) inside `kitti_helper.launch`. Once the sequences are converted to bag file and saved under the name kitti.bag, you can later on play from that saved bag file with the following command.
+In order to convert the sequence as a bag file, set `to_bag` parameter to true and `output_bag_file` parameter to /home/arghya/KITTI/data/odometry/kitti.bag (use your name instead of arghya) inside `kitti_helper.launch`. 
+You can confirm the data structure of the files inside KITTI directory. 
+```
+tree -d
+```
+Once the sequences are converted to bag file and saved under the name kitti.bag, you can later on play from that saved bag file with the following command.
 ```
     roslaunch aloam_velodyne aloam_velodyne_HDL_64.launch
     rosbag play /home/arghya/KITTI/data/odometry/kitti.bag
