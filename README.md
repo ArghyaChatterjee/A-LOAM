@@ -63,12 +63,12 @@ home
                     |        |   |-- 000000.png
                     |        |   |-- 000001.png
                     |        |   |-- .......png
-                    |        | image_1
+                    |        |-- image_1
                     |        |   |-- 000000.png
                     |        |   |-- 000001.png
                     |        |   |-- .......png
-                    |        | calib.txt
-                    |        | times.txt
+                    |        |-- calib.txt
+                    |        |-- times.txt
                     |-- velodyne
                         |-- sequences
                             |-- 00
